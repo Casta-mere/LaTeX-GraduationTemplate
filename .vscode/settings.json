@@ -1,0 +1,34 @@
+{
+    "latex-workshop.latex.tools": [
+		{
+			"name": "xelatex",
+			"command": "xelatex",
+			"args": [
+				"-synctex=1",
+				"-interaction=nonstopmode",
+                "-shell-escape",
+				"-file-line-error",
+                "-pdf",
+                "%DOCFILE%"
+            ]
+		},
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "Castamere",
+            "tools": [
+                "xelatex",
+                "bibtex",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+    ]
+}
