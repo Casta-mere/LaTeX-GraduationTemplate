@@ -168,7 +168,7 @@ FUNCTION {field.or.null}
 FUNCTION {emphasize}
 { duplicate$ empty$
     { pop$ "" }
-    { "\emph{" swap$ * "}" * }
+    { "{" swap$ * "}" * }
   if$
 }
 
@@ -479,8 +479,8 @@ FUNCTION {format.pages}
 { pages empty$
     { "" }
     { pages multi.page.check
-        { "pages" pages n.dashify tie.or.space.connect }
-        { "page" pages tie.or.space.connect }
+        { "" pages n.dashify tie.or.space.connect }
+        { "" pages tie.or.space.connect }
       if$
     }
   if$
