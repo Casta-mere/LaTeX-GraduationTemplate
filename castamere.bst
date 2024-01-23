@@ -662,15 +662,16 @@ FUNCTION {article}
   format.authors "author" output.check
   author format.key output
   new.block
-  format.title "title" output.check
+  format.title "[J]" *
+  "title" output.check
   new.block
   crossref missing$
-    { journal emphasize "journal" output.check
+    { journal "journal" output.check
+      format.date "year" output.check
       eid empty$
         { format.vol.num.pages output }
         { format.vol.num.eid output }
       if$
-      format.date "year" output.check
     }
     { format.article.crossref output.nonnull
       eid empty$
@@ -816,26 +817,31 @@ FUNCTION {inproceedings}
   format.authors "author" output.check
   author format.key output
   new.block
-  format.title "title" output.check
+  format.title "[A]" *
+  "title" output.check
   new.block
   crossref missing$
-    { format.in.ed.booktitle "booktitle" output.check
+    { format.in.ed.booktitle "[C]" * 
+      "booktitle" output.check
+      new.block
+      address empty$
+        {""}
+        { address ": " * }
+      if$
+      publisher empty$
+        {organization empty$
+          {}
+          {organization *}
+        if$
+        }
+        {publisher *}
+      if$
+      output.nonnull
+      format.date "year" output.check
+      new.sentence
       format.bvolume output
       format.number.series output
       format.pages output
-      address empty$
-        { organization publisher new.sentence.checkb
-          organization output
-          publisher output
-          format.date "year" output.check
-        }
-        { address output.nonnull
-          format.date "year" output.check
-          new.sentence
-          organization output
-          publisher output
-        }
-      if$
     }
     { format.incoll.inproc.crossref output.nonnull
       format.pages output
@@ -873,11 +879,16 @@ FUNCTION {mastersthesis}
   format.authors "author" output.check
   author format.key output
   new.block
-  format.title "title" output.check
+  format.title "[D]" *
+  "title" output.check
   new.block
-  "Master's thesis" format.thesis.type output.nonnull
-  school "school" output.check
-  address output
+  address empty$
+    {school "school" output.check}
+    { 
+      address ": " * school * 
+      "school or address" output.check
+    }
+  if$
   format.date "year" output.check
   format.url output
   new.block
@@ -902,22 +913,7 @@ FUNCTION {misc}
   empty.misc.check
 }
 
-FUNCTION {phdthesis}
-{ output.bibitem
-  format.authors "author" output.check
-  author format.key output
-  new.block
-  format.btitle "title" output.check
-  new.block
-  "PhD thesis" format.thesis.type output.nonnull
-  school "school" output.check
-  address output
-  format.date "year" output.check
-  format.url output
-  new.block
-  note output
-  fin.entry
-}
+FUNCTION {phdthesis} {mastersthesis}
 
 FUNCTION {proceedings}
 { output.bibitem
