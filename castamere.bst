@@ -685,7 +685,7 @@ FUNCTION {article}
   format.authors "author" output.check
   author format.key output
   new.block
-  format.title "[J]" *
+  format.title "\nobreak[J]" *
   "title" output.check
   new.block
   crossref missing$
@@ -840,11 +840,11 @@ FUNCTION {inproceedings}
   format.authors "author" output.check
   author format.key output
   new.block
-  format.title "[A]" *
+  format.title "\nobreak[A]" *
   "title" output.check
   new.block
   crossref missing$
-    { format.in.ed.booktitle "[C]" * 
+    { format.in.ed.booktitle "\nobreak[C]" * 
       "booktitle" output.check
       new.block
       address empty$
@@ -902,7 +902,7 @@ FUNCTION {mastersthesis}
   format.authors "author" output.check
   author format.key output
   new.block
-  format.title "[D]" *
+  format.title "\nobreak[D]" *
   "title" output.check
   new.block
   address empty$
