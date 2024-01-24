@@ -20,6 +20,7 @@ ENTRY
     issn
     journal
     key
+    language
     month
     note
     number
@@ -184,13 +185,18 @@ FUNCTION {format.names}
       nameptr #1 >
         { namesleft #1 >
             { ", " * t * }
-            { numnames #2 >
-                { "," * }
-                'skip$
-              if$
+            {
               t "others" =
-                { " et~al." * }
-                { " and " * t * }
+                {language empty$
+                  {", et~al." *}
+                  { language "cn" =   
+                    {", 等" *}
+                    {", et~al." *}
+                  if$
+                  }
+                if$
+                }
+                { ", " * t * }
               if$
             }
           if$
@@ -402,6 +408,10 @@ FUNCTION {tie.or.space.connect}
   swap$ * *
 }
 
+FUNCTION {space.connect}
+{ " " swap$ * *
+}
+
 FUNCTION {either.or.check}
 { empty$
     'pop$
@@ -480,7 +490,7 @@ FUNCTION {format.pages}
     { "" }
     { pages multi.page.check
         { "" pages n.dashify tie.or.space.connect }
-        { "" pages tie.or.space.connect }
+        { "" pages space.connect }
       if$
     }
   if$
@@ -554,9 +564,22 @@ FUNCTION {format.chapter.pages}
 FUNCTION {format.in.ed.booktitle}
 { booktitle empty$
     { "" }
-    { editor empty$
-        { "In " booktitle emphasize * }
-        { "In " format.editors * ", " * booktitle emphasize * }
+    { 
+      language empty$ 
+      {editor empty$
+        { "In: " booktitle emphasize * }
+        { "In: " format.editors * ", " * booktitle emphasize * }
+      if$}
+      {language "cn" =
+          {editor empty$
+            { "见: " booktitle emphasize * }
+            { "见: " format.editors * ", " * booktitle emphasize * }
+          if$}
+          {editor empty$
+            { "In: " booktitle emphasize * }
+            { "In: " format.editors * ", " * booktitle emphasize * }
+          if$}
+        if$}
       if$
     }
   if$
