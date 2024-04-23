@@ -1,0 +1,55 @@
+% Author: Castamere
+\documentclass[UTF8, a4paper, 12pt, AutoFakeBold]{ctexart} % 使用ctex以支持中文字符
+
+% 字体字号
+\usepackage{geometry}
+\setmainfont{Times New Roman}
+\renewcommand\CJKrmdefault{SimSun(0)}
+\setCJKmainfont{simsun.ttc}[AutoFakeBold]
+\geometry{left=3.18cm,right=3.18cm,top=2.54cm,bottom=2.54cm}
+\linespread{1.6}
+
+% 引用相关
+\RequirePackage{natbib}
+\bibliographystyle{references/castamere}
+\bibpunct{[}{]}{;}{s}{,}{,} % 第一，二个参数为括号样式，可以换成小括号
+\usepackage[hidelinks]{hyperref} % 用于超链接
+\newcommand{\fullcite}[1]{(\citeauthor{#1}, \citeyear{#1})\cite{#1}} % 自定义引用指令
+
+\pagestyle{empty} % 去掉页眉页脚等，与引用无关
+
+%%%%%%%%%%% 正文
+
+\begin{document}
+
+\section{期刊}
+
+[序号] 作者. 题名\nobreak[J]. 刊名, 出版年份, 卷号(期号): 起止页码. 
+
+这是引用一篇中文期刊\cite{李静2021多语言}(作者数<3)
+
+这是引用一篇中文期刊\cite{张德海2018基于}(作者数>3)
+
+这是引用一篇外文期刊\cite{Deng2013ApplicationOE}(作者数<3)
+
+这是引用一篇外文期刊\cite{you2022knowledge}(作者数>3)
+
+\section{论文集}
+
+[序号] 作者. 题名\nobreak[A]. 见(英文用In): 主编. 论文集名\nobreak[C]. 出版地: 出版者, 出版年. 起止页码.
+
+这是引用一篇中文论文集\cite{封晨}
+
+这是引用一篇外文论文集\cite{dong2014knowledge}
+
+\section{学位论文}
+
+[序号] 作者. 题名\nobreak[D]. 保存地点: 保存单位, 年.
+
+这是引用一篇中文学位论文\cite{姚歆蕾2021基于}
+
+这是引用一篇外文学位论文\cite{w2021e}
+
+\bibliography{references/references} % 使用\bibliography{}在此处列出所有参考文献
+
+\end{document}
