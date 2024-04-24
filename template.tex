@@ -83,10 +83,34 @@
 \newcommand{\fullcite}[1]{(\citeauthor{#1}, \citeyear{#1})\cite{#1}} % 自定义引用指令
 \renewcommand{\refname}{\begin{center} \heiti\sanhao 参考文献 \end{center}}
 
-% MARK: 公式相关
+% MARK: 图表公式
+
+% 公式
 \usepackage{amsmath}
+
+% 图
+
+% 表
+\usepackage{booktabs, multirow, longtable, array, multicol}
+
+% 编号与命名
+\usepackage{caption, graphicx, float}
+\graphicspath{{figure/}}
+
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+
 \numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+
 \renewcommand{\theequation}{\thesection-\arabic{equation}}
+\renewcommand{\thefigure}{\thesection-\arabic{figure}}
+\renewcommand{\thetable}{\thesection-\arabic{table}}
+
+\DeclareCaptionFont{five}{\zihao{5}\bfseries}
+\captionsetup[figure]{labelsep=space,font=five}
+\captionsetup[table]{labelsep=space,font=five,position=top}
 
 % MARK: 其他
 
