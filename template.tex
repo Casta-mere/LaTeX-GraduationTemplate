@@ -83,6 +83,13 @@
 \newcommand{\fullcite}[1]{(\citeauthor{#1}, \citeyear{#1})\cite{#1}} % 自定义引用指令
 \renewcommand{\refname}{\begin{center} \heiti\sanhao 参考文献 \end{center}}
 
+% MARK: 公式相关
+\usepackage{amsmath}
+\numberwithin{equation}{section}
+\renewcommand{\theequation}{\thesection-\arabic{equation}}
+
+% MARK: 其他
+
 \usepackage{lipsum} % lipsum
 \usepackage{pdfpages} % include pdf pages
 

@@ -1,1 +1,38 @@
 \section{公式}
+
+\subsection{单行公式}
+
+\emph{The Schrödinger equation} is given by equation \ref{eq:1}.
+
+\begin{equation}
+    \label{eq:1}
+    i\hbar \frac{\partial}{\partial t} \psi(\mathbf{r}, t) = \hat{H} \psi(\mathbf{r}, t)
+\end{equation}
+
+where $\hbar$ is the reduced Planck constant, $\psi(\mathbf{r}, t)$ is the wave function, and $\hat{H}$ is the Hamiltonian operator.
+
+\subsection{跨行公式}
+
+The Schrödinger equation in three dimensions with a time-dependent potential $V(\mathbf{r}, t)$ is given by equation \ref{eq:2}.
+
+\begin{multline}
+    \label{eq:2}
+    i\hbar \frac{\partial}{\partial t} \Psi(\mathbf{r}, t) = \left[\frac{-\hbar^2}{2m} \nabla^2 + V(\mathbf{r}, t)\right] \Psi(\mathbf{r}, t) \\
+    = -\frac{\hbar^2}{2m} \left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}\right) \Psi(\mathbf{r}, t) + V(\mathbf{r}, t) \Psi(\mathbf{r}, t)
+\end{multline}
+
+where $\Psi(\mathbf{r}, t)$ is the wave function, $m$ is the mass of the particle, $\hbar$ is the reduced Planck constant, and $\nabla^2$ is the Laplacian operator.
+
+\subsection{方程组}
+
+\emph{Maxwell's equations} are given by equation \ref{eq:3} through \ref{eq:6}.
+
+\begin{align}
+    \label{eq:3} \nabla \cdot \mathbf{E}  & = \frac{\rho}{\varepsilon_0}                                                   \\
+    \label{eq:4} \nabla \cdot \mathbf{B}  & = 0                                                                            \\
+    \label{eq:5} \nabla \times \mathbf{E} & = -\frac{\partial \mathbf{B}}{\partial t}                                      \\
+    \label{eq:6} \nabla \times \mathbf{B} & = \mu_0 \mathbf{J} + \mu_0\varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}
+\end{align}
+
+Here, $\mathbf{E}$ and $\mathbf{B}$ represent the electric and magnetic fields respectively, $\rho$ is the charge density, $\mathbf{J}$ is the current density, $\varepsilon_0$ is the permittivity of free space, and $\mu_0$ is the permeability of free space.
+
