@@ -54,13 +54,58 @@
 \usepackage[hidelinks]{hyperref} % 用于超链接
 \newcommand{\fullcite}[1]{(\citeauthor{#1}, \citeyear{#1})\cite{#1}} % 自定义引用指令
 
-%%%%%%%%%%% 正文
+\usepackage{lipsum}
+% MARK: 正文
 
 \begin{document}
 
-\section{期刊}
+% MARK: 摘要
+\pagestyle{empty}
+\pagenumbering{gobble}
 
- [序号] 作者. 题名\nobreak[J]. 刊名, 出版年份, 卷号(期号): 起止页码.
+\phantomsection\addcontentsline{toc}{section}{\sihao 摘要}
+
+摘要
+
+\newpage
+
+\phantomsection\addcontentsline{toc}{section}{\sihao Abstruct}
+
+Abstruct
+
+\newpage
+% MARK: 目录
+
+\pdfbookmark[1]{目录}{bookmark:目录}
+\pagestyle{tocstyle}
+\pagenumbering{Roman}
+\tableofcontents
+\clearpage
+
+% MARK: 图表
+\pagestyle{mainstyle}
+\pagenumbering{arabic}
+
+\section{图\&表}
+
+\subsection{图}
+
+\lipsum[1-4]
+
+\subsubsection{单图}
+\subsubsection{多图}
+
+\subsection{表}
+\subsubsection{三线表}
+\subsubsection{跨页表}
+
+\section{公式}
+
+\section{参考文献}
+
+\subsection{期刊}
+
+[序号] 作者. 题名\nobreak[J]. 刊名, 出版年份, 卷号(期号): 起止页码.
 
 这是引用一篇中文期刊\cite{李静2021多语言}(作者数<3)
 
@@ -70,21 +115,26 @@
 
 这是引用一篇外文期刊\cite{you2022knowledge}(作者数>3)
 
-\section{论文集}
+\subsection{论文集}
 
- [序号] 作者. 题名\nobreak[A]. 见(英文用In): 主编. 论文集名\nobreak[C]. 出版地: 出版者, 出版年. 起止页码.
+[序号] 作者. 题名\nobreak[A]. 见(英文用In): 主编. 论文集名\nobreak[C]. 出版地: 出版者, 出版年. 起止页码.
 
 这是引用一篇中文论文集\cite{封晨}
 
 这是引用一篇外文论文集\cite{dong2014knowledge}
 
-\section{学位论文}
+\subsection{学位论文}
 
- [序号] 作者. 题名\nobreak[D]. 保存地点: 保存单位, 年.
+[序号] 作者. 题名\nobreak[D]. 保存地点: 保存单位, 年.
 
 这是引用一篇中文学位论文\cite{姚歆蕾2021基于}
 
 这是引用一篇外文学位论文\cite{w2021e}
+
+
+% MARK: 参考文献
+
+\phantomsection\addcontentsline{toc}{section}{参考文献}
 
 \bibliography{references/references} % 使用\bibliography{}在此处列出所有参考文献
 
