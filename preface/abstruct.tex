@@ -1,0 +1,32 @@
+\pagestyle{empty}
+\pagenumbering{gobble}
+
+% \phantomsection\addcontentsline{toc}{section}{\sihao 摘 \quad 要}
+\phantomsection
+\pdfbookmark[1]{摘要}{bookmark:摘要}
+\cftaddtitleline{toc}{part}{\sihao 摘 \quad 要}{}
+
+\renewcommand{\abstractname}{\textbf{\heiti\xiaosan 摘 \quad 要}}
+\begin{abstract}
+
+    \lipsum[1-3]
+
+    \vspace{0.5ex}
+    \noindent\textbf{关键词：}物理；化学；数学；etc.；etc.
+\end{abstract}
+\clearpage
+
+% \phantomsection\addcontentsline{toc}{section}{\sihao Abstruct}
+\phantomsection
+\pdfbookmark[1]{Abstruct}{bookmark:Abstruct}
+\cftaddtitleline{toc}{part}{\sihao Abstruct}{}
+
+\renewcommand{\abstractname}{\textbf{\zihao{-3}Abstract}}
+\begin{abstract}
+
+    \lipsum[4-6]
+
+    \vspace{0.5ex}
+    \noindent\textbf{Keywords: }Physics; Chemistry; Mathmatics; etc.; etc.
+\end{abstract}
+\clearpage
