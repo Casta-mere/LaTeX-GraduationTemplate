@@ -19,6 +19,33 @@
 \geometry{left=3.18cm,right=3.18cm,top=2.54cm,bottom=2.54cm}
 \linespread{1.5}
 
+% MARK: 章节命名
+\ctexset{
+	section={
+		name={第,章},
+		format=\raggedright\sanhao\heiti,
+		beforeskip=0.5ex,
+		afterskip=0ex,
+		aftername=\enspace,
+        number=\arabic{section},
+	},
+	subsection={
+		format=\raggedright\sihao\heiti,
+		beforeskip=1ex,
+		afterskip=1ex,
+		aftername=\enspace,
+        number=\arabic{section}.\arabic{subsection},
+	},
+	subsubsection={
+		format=\raggedright\xiaosi\heiti,
+		beforeskip=0ex,
+		afterskip=0ex,
+		aftername=\enspace,
+        number=\arabic{section}.\arabic{subsection}.\arabic{subsubsection},
+	},
+	contentsname={\begin{center}\heiti\sanhao\bfseries{目 \quad 录}\end{center}}
+}
+
 % MARK: 目录相关
 \usepackage{tocloft}
 \setlength\cftbeforetoctitleskip{0ex}
