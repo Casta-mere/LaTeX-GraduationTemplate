@@ -74,12 +74,13 @@
 	\fancyfoot[CE,CO]{\xiaowu\thepage}
 }
 
-% 引用相关
+% MARK: 引用相关
 \RequirePackage{natbib}
 \bibliographystyle{references/castamere}
 \bibpunct{[}{]}{;}{s}{,}{,} % 第一，二个参数为括号样式，可以换成小括号
 \usepackage[hidelinks]{hyperref} % 用于超链接
 \newcommand{\fullcite}[1]{(\citeauthor{#1}, \citeyear{#1})\cite{#1}} % 自定义引用指令
+\renewcommand{\refname}{\begin{center} \heiti\sanhao 参考文献 \end{center}}
 
 \usepackage{lipsum}
 % MARK: 正文
@@ -90,7 +91,7 @@
 \pagestyle{empty}
 \pagenumbering{gobble}
 
-\phantomsection\addcontentsline{toc}{section}{\sihao 摘要}
+\phantomsection\addcontentsline{toc}{section}{\sihao 摘 \quad 要}
 
 摘要
 
