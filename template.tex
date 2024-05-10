@@ -82,7 +82,8 @@
 \bibpunct{[}{]}{;}{s}{,}{,} % 第一，二个参数为括号样式，可以换成小括号
 \usepackage[hidelinks]{hyperref} % 用于超链接
 \newcommand{\fullcite}[1]{(\citeauthor{#1}, \citeyear{#1})\cite{#1}} % 自定义引用指令
-\renewcommand{\refname}{\begin{center} \heiti\sanhao 参考文献 \end{center}}
+\renewcommand{\refname}{\begin{center} \vspace{-40pt} \heiti\sanhao 参考文献 \end{center}}
+\setlength{\bibsep}{0pt}
 
 % MARK: 图表公式
 
@@ -136,7 +137,7 @@
 
 % MARK: 附录
 \phantomsection\addcontentsline{toc}{section}{参考文献}
-\bibliography{references/references}
+{\wuhao\bibliography{references/references}}
 \newpage
 \include{appendice/thanks} % 致谢
 \include{appendice/appendice} % 附录
