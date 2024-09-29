@@ -3,8 +3,8 @@
 %%
 %% Copyright Castamere
 %% China
-%% E-mail: Castamere@gmail.com
-%% Website: dino.castamerego.com
+%% E-mail: castamerego@gmail.com
+%% Website: www.castamerego.com
 ENTRY
   { address
     author
